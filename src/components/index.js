@@ -116,7 +116,7 @@ const Home = () => {
     const call = (classname) => {
         setRequest(classname)
         setLoading(true)
-        const res = axios.get(`https://clash-database-api.herokuapp.com${classname}`).then((response) => {
+        axios.get(`https://clash-database-api.herokuapp.com${classname}`).then((response) => {
             setResponse(response.data)
             document.getElementById('res').scrollIntoView()
             setLoading(false)
@@ -131,7 +131,7 @@ const Home = () => {
         <Wrapper>
             <div className='floater'>
                 {loading ? 
-                <img className='spin' src={'/loading.png'} />
+                <img className='spin' alt='loading spinner' src={'/loading.png'} />
                 : null}
             </div>
             <div style={{color: "white"}}>
