@@ -113,6 +113,10 @@ const Home = () => {
     const params = ["/api/troop/barbarian", "/api/super/superarcher", "/api/siege/loglauncher", "/api/spell/poisonspell",
     "/api/hero/grandwarden", "/api/pet/lassi"]
 
+    const buildings = ["/api/building/types", "/api/defenses", "/api/traps", "/api/resources", "/api/army", "/api/walls"]
+
+    const buildingParam = ["/api/defense/cannon", "/api/trap/airbomb", "/api/resource/townhall", "/api/army/armycamp"]
+
     const call = (classname) => {
         setRequest(classname)
         setLoading(true)
@@ -166,10 +170,31 @@ const Home = () => {
                     </div>
                 ))}
             </div>
+            <hr style={{border: "solid black 1px"}}/>
+            <div className='categories buildings'>
+                <h1>Building Request Examples</h1>
+                {buildings.map((category) => (
+                    <div className='req' key={`${category}`}>
+                        <h3>{category}</h3>
+                        <button onClick={(e) => call(e.currentTarget.className)} className={`${category}`}><p>Request</p></button>
+                    </div>
+                ))}
+            </div>
+            <hr style={{border: "solid black 1px"}}/>
+            <div className='params buildings'>
+                <h1>Building Specific Examples</h1>
+                {buildingParam.map((category) => (
+                    <div className='req' key={`${category}`}>
+                        <h3>{category}</h3>
+                        <button onClick={(e) => call(e.currentTarget.className)} className={`${category}`}><p>Request</p></button>
+                    </div>
+                ))}
+            </div>
             <div id='res' className='response'>
                 <h3>{request}</h3>
                 <p style={{color: "black", padding: "5px", borderRadius: "4px"}}>{JSON.stringify(response)}</p>
             </div>
+            <h2 style={{color: "white", textAlign: "center", marginTop: "20px"}}>Contact me for any bugs or missing updates! I'm most likely to respond through discord or twitter.</h2>
         </Wrapper>
     )
 }
