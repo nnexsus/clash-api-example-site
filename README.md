@@ -1,4 +1,5 @@
-#Clash of Clans database api
+*Clash of Clans database api*
+
 Hi. While I was working on my CoC discord bot, I realized there was no good clash of clans database for army or building stats.
 So, I've made one. It's free to use and doesn't need a signup or key, just make a request and you're set.
 
